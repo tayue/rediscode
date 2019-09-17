@@ -1,0 +1,74 @@
+version: '3'
+
+services:
+ redis1:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9001/data:/data
+  environment:
+   - REDIS_PORT=9001
+  ports:
+    - '9001:9001'       #服务端口
+    - '5378:6379'
+    - '19001:19001'   #集群端口
+
+ redis2:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9002/data:/data
+  environment:
+   - REDIS_PORT=9002
+  ports:
+    - '9002:9002'
+    - '5379:6379'
+    - '19002:19002'
+
+ redis3:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9003/data:/data
+  environment:
+   - REDIS_PORT=9003
+  ports:
+    - '9003:9003'
+    - '5380:6379'
+    - '19003:19003'
+
+ redis4:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9004/data:/data
+  environment:
+   - REDIS_PORT=9004
+  ports:
+    - '9004:9004'
+    - '5381:6379'
+    - '19004:19004'
+
+ redis5:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9005/data:/data
+  environment:
+   - REDIS_PORT=9005
+  ports:
+    - '9005:9005'
+    - '5382:6379'
+    - '19005:19005'
+
+ redis6:
+  image: publicisworldwide/redis-cluster
+  restart: always
+  volumes:
+   - /data/redis/9006/data:/data
+  environment:
+   - REDIS_PORT=9006
+  ports:
+    - '9006:9006'
+    - '5383:6379'
+    - '19006:19006'
